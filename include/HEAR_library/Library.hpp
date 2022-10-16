@@ -14,10 +14,8 @@
 #include "HEAR_control/InvertedSwitch.hpp"
 #include "HEAR_control/InvertedSwitch3.hpp"
 #include "HEAR_control/MedianFilter.hpp"
-#include "HEAR_control/Mrft.hpp"
 #include "HEAR_control/Multiply.hpp"
 #include "HEAR_control/Mux3.hpp"
-#include "HEAR_control/PID_Block.hpp"
 #include "HEAR_control/Saturation.hpp"
 #include "HEAR_control/Sum.hpp"
 #include "HEAR_control/Sum3.hpp"
@@ -89,17 +87,11 @@ Block* Library::createBlock(BLOCK_ID b_type, int b_uid, double _dt, TYPE d_type)
     case BLOCK_ID::MEDIAN_FILTER :
         blk = new MedianFilter(b_uid);
         break;
-    case BLOCK_ID::MRFT :
-        blk = new MRFT_Block(b_uid);
-        break;
     case BLOCK_ID::MULTIPLY :
         blk = new Multiply(b_uid);
         break;
     case BLOCK_ID::MUX3 :
         blk = new Mux3(b_uid);
-        break;
-    case BLOCK_ID::PID :
-        blk = new PID_Block(_dt, b_uid);
         break;
     case BLOCK_ID::SATURATION :
         blk = new Saturation(b_uid);
