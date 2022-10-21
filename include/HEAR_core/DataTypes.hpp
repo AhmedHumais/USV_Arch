@@ -6,6 +6,7 @@ namespace HEAR{
     enum TYPE{
         NA,
         Int,
+        IntVec,
         Float,
         Float3,
         FloatVec,
